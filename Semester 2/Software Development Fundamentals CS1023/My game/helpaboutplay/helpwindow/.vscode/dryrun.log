@@ -1,0 +1,12 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory 'c:/Users/Namita/Downloads/helpwindow'
+\
+g++ -c main.cpp -I C:\\SFML-2.5.1\\include
+\
+g++ -c helpWindow.cpp -I C:\\SFML-2.5.1\\include
+\
+g++ -c tile.cpp -I C:\\SFML-2.5.1\\include
+\
+g++ -o main.exe -L C:\\SFML-2.5.1\\lib  main.o helpWindow.o tile.o -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-network -lsfml-system
+make.exe: Leaving directory 'c:/Users/Namita/Downloads/helpwindow'
+ 

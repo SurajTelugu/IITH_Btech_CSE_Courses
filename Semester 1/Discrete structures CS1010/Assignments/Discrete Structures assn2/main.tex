@@ -1,0 +1,279 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\newcommand{\qed}{\hfill \ensuremath{\Box}} 
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+
+\title{\textbf{Discrete Structures Assignment 2}}
+\author{SURAJ-CS20BTECH11050}
+\date{February 2021}
+
+\begin{document}
+\maketitle
+\hrule
+\section*{Problem 1}
+\subsection*{problem 1(a)}
+Given, $f(n)\,a_{n}\,=\,g(n)\,a_{n-1}+h(n)$ for $n\geq 1$ and $a_{0}\,=\,C$
+\null \par
+\noindent Define, $Q(n)\,=\,\frac{(f(1)\,f(2)....f(n-1))} 
+{(g(1)\,g(2)....g(n))}\,=\,\frac{\displaystyle\prod_{i=1}^{n-1}f(i)}
+{\displaystyle\prod_{i=1}^{n}g(i)}$
+\null \par \null
+           $$f(n)-g(n)a_{n-1}\,=\,h(n)$$
+by Multiplying  Q(n) on both sides of the above equation we get 
+        $$ (f(n)\,a_{n}-g(n)\,a_{n-1})\,Q(n)\,=\,h(n)\,Q(n)$$
+        $$f(n)\,a_{n}\,Q(n)-g(n)\,a_{n-1}\,Q(n)\,=\,h(n)\,Q(n)$$
+        $$\frac{a_{n}\,f(n)\displaystyle\prod_{i=1}^{n-1}f(i)}
+{\displaystyle\prod_{i=1}^{n}g(i)}-g(n)\,a_{n-1}\,Q(n)\,=\,h(n)\,Q(n)$$
+by including $f(n)$ in numerator's product of above equation multiplying
+numerator and denominator with $g(n+1)$ we get
+$$\frac{a_{n}\,g(n+1)\displaystyle\prod_{i=1}^{n}f(i)}
+{g(n+1)\,\displaystyle\prod_{i=1}^{n}g(i)}-g(n)\,a_{n-1}\,Q(n)\,=\,h(n)\,Q(n)$$
+
+\newpage
+\noindent we know that $\frac{\displaystyle\prod_{i=1}^{n}f(i)}
+{g(n+1)\displaystyle\prod_{i=1}^{n}g(i)}\,=\,Q(n+1)$ by substituting
+$Q(n+1)$ in the above equation we get
+         $$Q(n+1)\,g(n+1)\,a_{n}-Q(n)\,g(n)\,a_{n-1}\,=\,h(n)\,Q(n)$$
+Assume $Q(n+1)\,g(n+1)\,a_{n}\,=\,b_n$ hence the given recurrence relation is
+converted to Non-Homogeneous Recurrence Relation
+$$b(n)-b(n-1)\,=\,h(n)\,Q(n)$$
+$$b(n)\,=\,b(n-1)+h(n)\,Q(n)$$
+
+\subsection*{problem1(b)}
+\noindent Given that $Q(1)\,g(1)\,=\,f(0)\,=\,1$ 
+\null \par \null
+\noindent Consider for some $i \in \mathbb{N}$ $b(i)-b(i-1)\,=\,h(i)\,Q(i)$
+let us do the following summation to 
+
+     \[\sum_{i=1}^{n}(b_{i}-b_{i-1})\,=\,\sum_{i=1}^{n}(h(i)\,Q(i) \]
+     \[b_{n}-b_{0}\,=\,\sum_{i=1}^{n}(h(i)\,Q(i) \]
+     \[Q(n+1)\,g(n+1)\,a_{n}-Q(1)\,g(1)\,a_{0}\,=\,\sum_{i=1}^{n}(h(i)\,Q(i) \]
+\[Q(n+1)\,g(n+1)\,a_{n}-C\,=\,\sum_{i=1}^{n}(h(i)\,Q(i) \]
+\[a_{n}\,=\,\frac{C+\displaystyle\sum_{i=1}^{n}(h(i)\,Q(i)}{Q(n+1)\,g(n+1)} \]
+
+Finally after solving the recurrence we get the value of $a_{n}$ as
+$$a_{n}\,=\,\frac{C+\displaystyle\sum_{i=1}^{n}(h(i)\,Q(i))}{Q(n+1)\,g(n+1)}$$
+\null \par  \null 
+\qed
+
+\newpage
+\section*{Problem 2}
+\subsection*{problem 2(a)}
+\noindent Given, $(n+1)\,a_{n}\,=\,(n+3)\,a_{n-1}+n$ for $n\geq 1$
+and $a_0\,=\,1$
+\null \par \null
+\noindent by previous exercise we know that
+\begin{align*}
+ f(n) &= n+1 \\
+ g(n) &= n+3 \\
+ h(n) &= n   \\
+ Q(n) &= \frac{1.2.3....n}{4.5....n+3} = \frac{6\,n!}{(n+3)!} \,  
+ \text{(as per its definition)}
+\end{align*}
+
+Applying the $a_n$ result from previous exercise we get
+\begin{align*}
+ a_{n} &= \dfrac{C+\displaystyle\sum_{i=1}^{n}(h(i)\,Q(i))}{Q(n+1)\,g(n+1)} \\ \\
+ a_{n} &= \dfrac{1+\displaystyle\sum_{i=1}^{n}\left(i\,\dfrac{6i!}{(i+3)!}\right)}
+ {\dfrac{6(n+1)!}{(n+4)!}\,(n+4)} \\ \\ 
+ a_{n} &= \dfrac{1+\displaystyle\sum_{i=1}^{n}
+\left(\dfrac{6i}{(i+1)\,(i+2)\,(i+3)}\right)} {\dfrac{6}{(n+2)\,(n+3)}} 
+\end{align*}
+
+Solving Summation using telescopic addition
+\null \par \null
+$\displaystyle\sum_{i=1}^{n}\left(\dfrac{6i}{(i+1)\,(i+2)\,(i+3)}\right)$
+$=\displaystyle\sum_{i=1}^{n}\dfrac{3}{(i+2)}\left(\dfrac{3}{(i+3)}-\dfrac{1}{(i+1)}\right)$
+\\ \null \par \null 
+$=\displaystyle\sum_{i=1}^{n}\,9\left(\dfrac{1}{(i+2)}-\dfrac{1}{(i+3)}\right)$
+$-\;\displaystyle\sum_{i=1}^{n}\,3\left(\dfrac{1}{(i+1)}-\dfrac{1}{(i+2)}\right)$
+
+\newpage
+
+$=9\left(\dfrac{1}{3}-\dfrac{1}{(n+3)}\right)\,-\,3\left(\dfrac{1}{2}-\dfrac{1}{(n+2)}\right)$
+\\ \null \par \null 
+$=\dfrac{3}{2}\,-\,\dfrac{9}{(n+3)}\,+\,\dfrac{3}{(n+2)}$
+\\ \null \par \null 
+$$\textbf{Summation}=\dfrac{3}{2}\,-\,\dfrac{(6n+9)}{(n+2)(n+3)}$$
+\\ \null \par \null 
+
+By substituting value of summation in $a_n$ we get
+
+\begin{align*}
+a_n &= \dfrac{1+\dfrac{3}{2}\,-\,\dfrac{(6n+9)}{(n+2)(n+3)}}{\dfrac{6}{(n+2)(n+3)}}
+\\ \\
+a_n &= \dfrac{\dfrac{5(n^2+5n+6)\,-\,2(6n+9)}{2\,(n+2)(n+3)}}{\dfrac{6}{(n+2)(n+3)}} 
+\\ \\
+a_n &= \dfrac{5n^2+13n+12}{12} 
+\\ \\
+\therefore \: a_n &= \dfrac{n\,(5n+13)}{12}\,+\,1
+\end{align*}
+
+\newpage
+\subsection*{problem 2(b)}
+\textbf{Execution code:} \\
+from sympy import Function, rsolve \\
+from sympy.abc import n \\
+g = Function('g') \\
+Func = g(n-1) - (n+1) * g(n) \\
+print 'Solving the Recurrence', Func \\
+soln = rsolve(Func, g(n), {g(0): 1}) \\
+print soln
+\null \par \null
+\null \par \null
+\noindent \textbf{Output:} \\ 
+$>>>$ from sympy import Function, rsolve \\
+... from sympy.abc import n \\
+... g = Function('$g$') \\
+... Func = $g(n-1) - (n+1) * g(n)$ \\
+... print 'Solving the Recurrence', Func \\
+... soln = rsolve(Func, $g(n)$, {$g(0): 1$}) \\
+... print soln \\
+Solving the Recurrence $-(n + 1)*g(n) + g(n - 1)$
+$$\dfrac{1}{\Gamma(n+2)}$$
+$$\text{Which is further equals to}\;\;\left(\dfrac{1}{(n+1)!}\right)$$
+Hence the problem solved using \textbf{SymPy}
+\null \par \null
+\qed
+
+\newpage
+
+\section*{Problem 3}
+\textbf{Theorem:} \textit{Let $c_1\,,\,c_2 \in \mathbb{R}$ with $c_2 \neq 0$. Suppose
+that $r^2-c_1r-c_2\,=\,0$ has only one root $r_0$. A sequence \{$a_n$\} is a solution of the
+recurrence relation $a_n\,=\,c_1\,a_{n-1} + c_2\,a_{n-2}\;$  iff    
+$\;a_n\,=\,\alpha_{1}\,r_{0}^{n} + \alpha_{2}\,n\,r_{0}^{n}$ for $n\,=\,0,1,2....,$ where
+$\alpha_1$ and $\alpha_2$ are constants}
+\null \par \null
+\noindent \textbf{Proof:} Let $a_n\,=\,c_1\,a_{n-1} + c_2\,a_{n-2}\;$ be a
+recurrence relation whose character equation is $r^2-c_1r-c_2\,=\,0$ has one root $r_0$
+\null \par \null
+\noindent We have $\Delta\,=\,c_{1}^{2}+4\,c_2\,=\,0$ , $r_0\,=\,\dfrac{c_1}{2}\;$ 
+and $r_{0}^{2}\,=\,c_1\,r_0 + c_2\;$ from quadratic equation
+\null \par \null
+\noindent Let solution of above recurrence be of form 
+$\;a_n\,=\,\alpha_{1}\,r_{0}^{n} + \alpha_{2}\,n\,r_{0}^{n}$ 
+where $\alpha_1$ and $\alpha_2$ are constants
+
+\begin{align*}
+a_n &= c_1\,a_{n-1}+c_2\,a_{n-2} \\ \\
+    &= c_1\,(\alpha_{1}\,r_{0}^{n-1} + \alpha_{2}\,(n-1)\,r_{0}^{n-1})
+    +c_2\,(\alpha_{1}\,r_{0}^{n-2} + \alpha_{2}\,(n-2)\,r_{0}^{n-2}) 
+\\ \\
+    &= (c_1\,r_0+c_2)\,\alpha_1\,r_{0}^{n-2} + (c_1\,r_0+c_2)n\,r_{0}^{n-2}\,\alpha_2 -
+    (c_1\,r_0+2c_2)r_{0}^{n-2}\,\alpha_2
+\\ \\
+    &= (c_1\,r_0+c_2)\,\alpha_1\,r_{0}^{n-2} + (c_1\,r_0+c_2)n\,r_{0}^{n-2}\,\alpha_2 -
+    \left(\dfrac{c_{0}^{2}+4\,c_2}{2}\right)r_{0}^{n-2}\,\alpha_2 
+\\ \\
+    &= (c_1\,r_0+c_2)\,\alpha_1\,r_{0}^{n-2} + (c_1\,r_0+c_2)n\,r_{0}^{n-2}\,\alpha_2 
+\\ \\
+    &= \alpha_1\,r_{0}^{n}\,+\,\alpha_2\,r_{0}^{n}
+\\ \\
+    &= a_n
+\end{align*}
+
+$\because\;2\,r_0\,=\,c_1$ and\;$\Delta\,=\,c_{1}^{2}+4\,c_2\,=\,0\;$ and 
+$\;r_{0}^{2}\,=\,c_1\,r_0 + c_2\;$ 
+\null \par \null
+\noindent To show every solution of the Recurrence has the same form as above consider the 
+following statements 
+\null \par \null
+$$a_0\,=\,c_0\,=\,\alpha_1$$
+\null \par
+$$a_1\,=\,c_1\,=\,(\alpha_1+\alpha_2)\,r_0$$
+
+\newpage
+
+\begin{align*}
+    \alpha_1\,&=\,c_0 \\ \\
+    \alpha_2\,&=\,\dfrac{c_1-r_0\,c_0}{r_0}
+\end{align*}
+\null \par
+\noindent With the values of $\alpha_1$ and $\alpha_2$ we obtain a sequence $\{a_n\}$ such that
+$$a_n\,=\,\alpha_1\,r_{0}^{n}+\alpha_2\,n\,r_{0}^{n}$$
+\null \par
+\noindent satisfy same initial conditions as the given recurrence relation 
+\null \par \null
+\noindent We know that for a linear homogeneous recurrence of degree $2$ Unique solution 
+is obtained for two given initial conditions 
+\null \par \null
+\noindent $\therefore\;a_n\,=\,\alpha_1\,r_{0}^{n}+\alpha_2\,n\,r_{0}^{n}$ is the only possible 
+solution for the given recurrence relation 
+$a_n\,=\,c_1\,a_{n-1} + c_2\,a_{n-2}\;$
+\null \par \null
+\qed
+
+\newpage
+\section*{Problem 4}
+Given $f$ is an increasing function and a Recurrence relation 
+                 \[f(n) = a\,f\left(\dfrac{n}{b}\right) +c\,n^d \]
+where $a\geq1$ , $b>1$ and $c\;,d\;\in \mathbb{R}$
+
+\subsection*{(a)}
+$$(a=b^d) \land (n=b^k) \implies f(n)=f(1)\,n^d + c\,n^d\,\log_b n$$
+\null\par
+\textbf{Proof:} Let $a=b^d$ and $n=b^k\;$ we know that,
+
+\begin{align*}
+f(n)&=f(1)\,a^k+\displaystyle\sum_{i=0}^{k-1}a^i\,g\left(\dfrac{n}{b^i}\right) \\ \\
+f(n)&=f(1)\,(b^d)^{k}+\displaystyle\sum_{i=0}^{k-1}(b^d)^{i}\,
+\left(c\left(\dfrac{n}{b^i}\right)^{d}\right) \\ \\ 
+f(n)&=f(1)\,(b^k)^{d}+\displaystyle\sum_{i=0}^{k-1}(b^{di})\,
+\left(\dfrac{c\,n^d}{b^{di}}\right) \\ \\ 
+f(n)&=f(1)\,n^{d}+\displaystyle\sum_{i=0}^{k-1}\;c\,n^d\;\;(\because\,n=b^k) \\ \\ 
+f(n)&=f(1)\,n^{d}+k\,c\,n^d\;\;(\because\,c,n\;\text{are independent of}\;i)\\ \\ 
+f(n)&=f(1)\,n^{d}+c\,n^d\,\log_b n\;\;(\because\,k=\log_b n)\\ \\ 
+\end{align*}
+$$\therefore\,\text{The solution of given recurrence is}\;f(n)=f(1)\,n^{d}+c\,n^d\,\log_b n$$
+\null \par
+\qed
+
+\newpage
+\subsection*{(b)}
+$(a \neq b^d) \land (n=b^k) \implies f(n)=c_1\,n^d + c_2\,n^{\log_b a}$
+where $c_1=\dfrac{b^d\,c}{b^d - a}$ and $c_2=f(1)+\dfrac{b^d\,c}{a - b^d}$
+\null\par\null
+\noindent \textbf{proof:} Let $a \neq b^d$ and $n=b^k\;$ we know that,
+\begin{align*}
+f(n)&=f(1)\,a^k+\displaystyle\sum_{i=0}^{k-1}a^i\,g\left(\dfrac{n}{b^i}\right) \\ \\
+f(n)&=f(1)\,a^{\log_b n}+\displaystyle\sum_{i=0}^{k-1}a^i\,
+c\left(\dfrac{n}{b^i}\right)^{d}\\ \\
+f(n)&=f(1)\,n^{\log_b a}+\displaystyle\sum_{i=0}^{k-1}\,c\,n^d\,\left(\dfrac{a}{b^d}\right)^{i}\\ \\
+f(n)&=f(1)\,n^{\log_b a}+c\,n^d\,\displaystyle\sum_{i=0}^{k-1}\left(\dfrac{a}{b^d}\right)^{i}\\ \\
+f(n)&=f(1)\,n^{\log_b a}+c\,n^d\,\dfrac{\left(\dfrac{a}{b^d}\right)^{k}-1}
+{\left(\dfrac{a}{b^d}\right)-1}\\ \\
+f(n)&=f(1)\,n^{\log_b a}+c\,b^d\,n^d\,\dfrac{\dfrac{a^{log_b n}}{(b^{log_b n})^d}-1}{a-b^d} \\ \\
+f(n)&=f(1)\,n^{\log_b a}+c\,b^d\,n^d\,\dfrac{\dfrac{n^{log_b a}-n^d}{n^d}}{a-b^d} \\ \\
+f(n)&=f(1)\,n^{\log_b a}+\dfrac{b^d\,c\,n^{log_b n}}{a-b^d}-n^d\,\dfrac{b^d\,c}{a-b^d} \\ \\
+\end{align*}
+
+\newpage
+
+\[f(n)=\left(\dfrac{b^d\,c}{b^d-a}\right)\,n^d +\left(f(1)+\dfrac{b^d\,c}{a-b^d}\right)n^{log_b a}\]
+\null \par \null
+\noindent Let $c_1=\dfrac{b^d\,c}{b^d-a}$ and $c_2=\left(f(1)+\dfrac{b^d\,c}{a-b^d}\right)$ we
+finally get the solution for given recurrence such that $a \neq b^d$ as 
+$$f(n)=c_1\,n^d +c_2\,n^{log_b a}$$
+\null \par \null
+\noindent $\because$ We used logarithmic identities $b^{log_b n} = n\;$ and $\;a^{log_b n} = n^{log_b a}$
+we achieved the solution of the given recurrence as 
+\null \par
+\[ f(n) =
+\begin{cases} 
+f(n)=f(1)\,n^{d}+c\,n^d\,\log_b n &\text{if}\;\;a = b^d  \\ \\
+f(n)=\left(\dfrac{b^d\,c}{b^d-a}\right)\,n^d +\left(f(1)+\dfrac{b^d\,c}{a-b^d}\right)n^{log_b a}     &\text{if}\;\; a \neq b^d 
+   \end{cases}
+\]
+\null \par \null
+\qed
+\null \par \null
+\hrule
+
+\end{document}

@@ -1,0 +1,11 @@
+make.exe --dry-run --keep-going --print-directory
+make.exe: Entering directory 'c:/Users/Namita/OneDrive/Documents/Trials/sfml-demo/demogame'
+\
+g++ -c -I C:\\SFML-2.5.1\\include main.cpp
+ 
+\
+g++ -c -I C:\\SFML-2.5.1\\include Game.cpp
+\
+g++ -o main -L C:\\SFML-2.5.1\\lib main.o Game.o -lsfml-graphics -lsfml-audio -lsfml-network -lsfml-window -lsfml-system
+make.exe: Leaving directory 'c:/Users/Namita/OneDrive/Documents/Trials/sfml-demo/demogame'
+ 

@@ -1,0 +1,282 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{titling}
+\usepackage{url}
+%I have used many packages so that it may not show any error using a symbol
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+\title{\textbf{RUSSELL'S ANTINOMY}}
+\subtitle{A CHALLENGE TO FREGE'S SET THEORY AND CONTEMPORARY SET THEORIES}
+\author{SURAJ (CS20BTECH11050)}
+\date{February 2021}
+
+\begin{document}
+
+\maketitle
+\hrule
+\section{Introduction:}
+Russell's Antinomy or Russell's Paradox is a prominent set theoretical 
+paradox which is also known as Russell-Zermelo Paradox.It was discovered
+by Bertrand Arthur William Russell,British Logician,Philosopher and  Mathematician in 1901 it was first observed by Ernst Zermelo in 1899
+but was not thought much important.While working on Principles of
+Mathematics Russell encountered the paradox studying cantor power
+class theorem: Carnality of set strictly less than its power set.
+Gottlob Frege whose lifelong project was to demonstrate that 
+Foundation of Mathematics was Logic made him research many years and
+published "Grundgesetze der Arithmetik(The Basic laws of Arithmetic)"
+where he proposed a set theory which was thought to be ideal and
+perfect but Russell wrote his problem in terms of both logic and 
+set theory to Frege which lead his theory and his idea of logic to
+be inconclusive. Let us study the paradox,its consequences and how 
+we have avoided this problem in detail.
+
+\section{Paradox statement in different forms:}
+\subsection{Barber Paradox}
+Lets think about the paradox in elementary English form 
+The barber Paradox which was derived from Russell's Paradox
+\textbf{"Barber in the village shaves the beard of every person in 
+the village who do not shave his beard himself now, the question is
+\underline{should the barber shave himself or not?}"}
+\\ 
+Clearly we cannot answer the question if we think he shaves himself
+the according to the rule he should not if he does not shave himself 
+then he should we consider any of the two possibility hence its a 
+paradox.
+
+\subsection{Russell's Paradox in Set Theory}
+Naive idea of set theoretical concept of paradox is if we take a set
+of all people in the village who does not shave themselves then by 
+the above paradoxical idea should we include barber in the set or not.
+More generally, lets consider the following set in set builder form
+and define the paradox symbolically:
+$$ Let \, S=\{x \,|\, x \notin x\}\,then\,S \in S \iff S\notin S $$ 
+\newpage
+\noindent \textbf{"Let $S$ be Set of all sets which do not contain
+themselves should $S$ contain the Set $S$ in it i.e should it contain 
+itself or not?"}
+\\
+If we assume $S \notin S$ then the set $S$ should be added in it as 
+per its definition then it contradicts its own definition that sets
+which do not contain themselves so we conclude that we are now again
+in the similar situation as of Barber Paradox and cannot decide  $S$
+should be added in $S$ or not in either way it leads to a contradiction.
+
+\subsection{Russell's Paradox in Logical view}
+From the theory of predicate logic consider the following binary
+predicate where $\varphi(x)$ is substituted with $x\notin x$
+ $$\exists y \,\forall x(x \in y \iff \varphi(x)) $$
+ 
+\noindent After substituting $\varphi(x)$ with $x\notin x$ followed by
+by existential instantiation of variable $y$ with some constant set $Y$
+and universal instantiation of $x$ with $Y$ we get
+                 $$Y\in Y  \iff Y \notin Y$$
+Hence a contradiction and again we observe similar situation as 
+observed above.
+
+\section{Consequences and effects on Mathematics:}
+Frege's analogies were proved to be incorrect but that's not the end
+no other mathematical analogy or theory provided an explanation to the
+paradox.Many mathematicians at that time really did not care about 
+Russell's paradox but to form any new theory in set theory and logic
+the paradox was a great hurdle, they soon realised no mathematical 
+proof was trustworthy and only by eliminating paradox mathematics can
+prove its consistency.
+\par \null \par
+\noindent Any Axiomatic foundation in Mathematics has to be precise 
+that there should be $0$ probability of proving the axiom wrong,
+but Frege's axioms were proved to be wrong by Russell through his
+paradox and Frege was not able provide any justification to overcome
+it so he mentioned Russell Paradox in his book's appendix his work
+on finding Foundation of Mathematics was not complete Though we
+still use Frege's Axioms.There is no theory that provides an answer
+to paradox besides the paradox is being avoided to prove the 
+consistency of mathematics.
+
+\section{Reason for Frege's Failure:}
+Although Frege was extremely careful designing his theory he simply
+gave permission to form any list of distinct elements as set such 
+paradox is basically possible due to this.From principle of
+Pseudo-Scotus if such paradoxes or contractions are appeared in 
+a theory any statement can be proven to be true and thus destroys 
+the significance of entire theory erasing the difference between 
+truth and false thus Frege's theory was unsuccessful because his 
+theory made Russell's Paradox possible but it did not provide any
+solution or avoided the Russell Paradox. 
+
+\newpage
+\section{Possible Solutions to the Paradox:}
+There is no rigorous solution to the paradox until now.There are
+mainly two counter measures made to avoid Paradox.They are
+Russell's Type Theory, Zermelo's Axioms. Zermelo's Axioms were
+widely accepted which further evolved into Zermelo-Frankel
+Set Theory which uses Axiom of Choices famously known as ZFC's 
+accepted by all mathematicians and considered as Foundation of
+on going Mathematics. Russell has changed the idea of Logic and
+tried to avoid Paradox though Types and Set Theory based on Type
+Theory.
+\subsection{How ZFC'S Successfully Avoided Russell Paradox}
+Zermelo's Theory was an updated version of Frege's set theory and
+his axioms.He brilliantly avoided the paradox without actually changing
+the fundamental idea of Logic.The change of following Axiom has made
+solution possible.
+\par \null \par
+\noindent Zermelo method of avoiding the Paradox is replacing the 
+ following axiom \\
+$\forall P(x) \, \exists \, a\,set\,y=\{x\,|\,P(x)\}$ from Frege's
+set of Axioms with the following Axiom 
+$$(\forall P(x) \land \, \forall set\,b)\, \exists set 
+y=\{x\,|x\in set\,b \,\land P(x)\} $$
+The difference between above two axioms is that in Frege's Axiom
+there was no proper domain defined for variable for $x$ which
+unknowingly freed $x$ and makes such paradoxes possible it gives 
+liberty to the set definer and one can define any type of set 
+from a predicate and a free variable thus Russell Paradox is defined
+in such Axiomatic mathematics and Maths becomes Inconsistent
+
+\noindent While the second Axiom strictly says $x$ has to be itself
+contained in a set to be used to define a set restricts the usage of
+variable $x$ in whatever way we can cleverly avoid the paradox in
+both set theory and logical view. A set of x can only be used for
+a predicate not any x makes the $R=\{x \,|\, x \notin x\}$ not 
+a set but a class.As it is not a set concept of Russell paradox
+does not show up.
+Naive set theory and Frege's set theory failed in avoiding Russell's
+Paradox where ZFC's have efficiently avoided Russell Paradox instead of 
+solving it in order to maintain Consistency of Mathematics. 
+
+\subsection{Solution by Russell Using Theory of Types}
+Russell used Theory of Types which uses the concept of Existential 
+hierarchy. There were $3$ levels of distinction which are Objects, 
+Predicates, Predicates of Predicates.Russell's idea was to define 
+sets that are not member of themselves and individual sets are on 
+different level i.e they are of different type and thus avoiding the 
+paradox in logical view. Russell further developed the concept to 
+sets by considering Classes and individuals so on and and defining 
+an Axiom that classes cannot be members of themselves and so as
+individuals so on.Russell simply avoided the paradox by saying
+set $R$ is class and the other sets are like individuals.
+$$5^{th} Axiom \, \varepsilon P=\varepsilon Q \equiv \forall x \,
+(P(x)\equiv Q(x))$$
+This axiom is used to escape from Russell's Paradox in gives a 
+relation between same type entities
+
+\newpage
+$$R(x) \iff \exists S\,[x=\varepsilon S \land \neg S(x)]$$
+Russell's Paradox representation in type theory
+$$R(\varepsilon R) \equiv \neg R(\varepsilon R)$$
+Thus Russell's Paradox both Sets has been successfully shown as 
+different types and circumvent Russell Paradox.Though This theory
+used by advanced mathematics to prove some results it is portrayed
+more like definition based and does not involve logic hence it 
+was not used by logicians and was less famous among Mathematicians.
+
+\subsection{Some more Solutions:}
+Even W.V Quine who coined the term Russell Antinomy to the 
+Russell Paradox has tried to solve the paradox in his way and
+suggested a solution(method to escape) which also involved Type
+Theory.He introduced a new concept Stratification which assigns 
+natural number values to individuals of a class and does not allow
+new member to join easily.thus blocking Russell's Paradox.
+\par \null \par
+\noindent Another possible counter measure to the Paradox given by
+Aussonderung who avoids Russell's paradox by another axiom similar
+to Zermelo's Axiom.$x$ is a subset of $P$ that satisfies condition 
+$C$ if and only if $x$ satisfies condition $C$.
+
+\section{Further Developments and Applications:}
+Many new Paradoxes have been developed by simple modifications of 
+Russell Paradox i.e "The \rule{1cm}{0.15mm} er  of all 
+\rule{1cm}{0.15mm} that do not contain themselves" Grelling–Nelson
+paradox, Richard's paradox are developed from Russell's Paradox
+which fills the blank with Describe and Denote respectively.
+Russell's paradox and some other paradoxes have challenged
+mathematicians to provide new theories and led to the birth of 
+Type Theory and ZFC'S. Still active research is going on to 
+provide more rigorous solution to the Paradox.
+There are not much applications to the paradox but it is definitely
+avoided in any newly formed theory otherwise entire theory would
+be invalid and marked to be inconsistent.
+
+\section{Conclusion to Russell's Antinomy:}
+I worked on this report to provide some basic idea about Russell
+Paradox, its significance and some solutions provided to avoid it
+through this report. I slighted went through the history and 
+provided English analogical definition to Russell's Paradox and 
+also thoroughly went through its solutions,Finally gone through 
+further developments in the paradox. This Report gives an idea how
+mathematicians who try to build new theories worked to avoid Russell
+Paradox. Though Russell Paradox has not helped to solve 
+any new problems avoiding it in our theory mainly avoids all other
+issues and provides an ideal Axiomatic Theory which helps to 
+solve all the problems.
+
+\newpage
+\noindent With greater Axioms and complexity of theory greater
+Paradoxes or Antinomies may also be possible a theory should be 
+strict enough to avoid such Paradoxes and thus providing an ideal
+Theory.Formation of any new  Axiomatic theory one should consider the
+possibility of Russell Paradox and try avoiding it.The Paradox has 
+devastated Frege's work and also proved Naive set theory
+inconsistent.Avoiding such paradoxes helps us to solve further results
+instead of trying to solve it. Hence both Zermelo and Russell have 
+tried to avoid the Paradox instead of solving it.Therefore we can 
+conclude that Paradoxes in Mathematics can be dangerous but avoiding
+them would provide us compatible results.
+
+\section{References:}
+\textbf{Stanford Encyclopedia of Philosophy Russell's Paradox:}\\ 
+\url{https://plato.stanford.edu/entries/russell-paradox/#RPCL}
+\par \null \par
+\noindent \textbf{Internet of Philosophy:} \\
+\url{https://iep.utm.edu/par-russ/#H3}
+\par \null \par
+\noindent \textbf{Wikipedia:Russell Paradox:} \\
+\url{https://en.wikipedia.org/wiki/Russell%27s_paradox}
+\par \null \par
+\noindent \textbf{The Humble origins of Russell Paradox Article} \\
+PDF file referred from Google Scholar 
+\par \null \par
+\noindent \textbf{Stanford Encyclopedia of Philosophy Type Theory:} \\
+\url{https://plato.stanford.edu/entries/type-theory/}
+\par \null \par
+\noindent \textbf{Stanford Encyclopedia of Philosophy Gottlob Frege:} \\
+\url{https://plato.stanford.edu/entries/frege/}
+\par \null \par
+\noindent \textbf{One Hundred Years For Russell Paradox Book} \\
+PDF taken from Google \url{https://d-nb.info/971533202/04} 
+\par \null \par
+
+\par \null \par
+\par \null \par
+
+\textbf{Thank you for giving me an opportunity to explore new things}
+\par \null \par
+\textbf{\underline{END OF REPORT}}
+\par \null \par
+\par \null \par
+\hrule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

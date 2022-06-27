@@ -1,0 +1,174 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+\usepackage{tasks}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{sub subsection}}
+
+
+\hyphenation{optical networks semiconduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\date{March 2021}
+
+\begin{document}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\fn}[1]{\ensuremath{f\left(#1\right)}}
+\providecommand{\e}[1]{\ensuremath{E\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[ #1 ]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\Int}{\int\limits}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\vspace{3cm}
+\title{Assignment 2}
+\author{Suraj - CS20BTECH11050}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thetable}{\theenumi}
+
+and latex-tikz codes from 
+%
+\begin{lstlisting}
+LATEX CODE
+\end{lstlisting}
+
+\section{GATE PROBLEM 78} 
+The joint probability density function of two random variables X and Y is given as
+\[
+  f(x,y) =
+  \begin{cases}
+      \dfrac{6}{5}\brak{x + y^{2}}  & 0\leq x \leq 1\;\;0\leq y \leq 1 \\ \\
+                  0                 & \text{elsewhere} 
+  \end{cases}
+\] 
+
+\begin{tasks}(2)
+\task $\dfrac{2}{5}\;\text{and}\;\dfrac{3}{5}$
+\task $\dfrac{3}{5}\;\text{and}\;\dfrac{3}{5}$
+\task $\dfrac{3}{5}\;\text{and}\;\dfrac{6}{5}$
+\task $\dfrac{4}{5}\;\text{and}\;\dfrac{6}{5}$
+\end{tasks}
+
+\bigskip
+
+\section{SOLUTION}
+For a continuous joint probability distribution  $\e{X}$ \\
+and $\e{Y}$ are obtained using the following equations  \\
+\eqref{a} and \eqref{b}
+
+\begin{align}
+\e{X} &= \Int_{-\infty}^{+\infty}\Int_{-\infty}^{+\infty} x \cdot \fn{x,y}\,dx\,dy \label{a} \\ 
+\e{Y} &= \Int_{-\infty}^{+\infty}\Int_{-\infty}^{+\infty} y \cdot \fn{x,y}\,dx\,dy \label{b}
+\end{align}
+Using equation \eqref{a} \e{X} is calculated as 
+\newpage
+\begin{align*}
+\e{X} &= \Int_{0}^{1}\Int_{0}^{1} x\,\dfrac{6}{5}\brak{x+y^2}\,dx\,dy \;+ 0 \\ 
+      &= \Int_{0}^{1}\dfrac{6}{5}\brak{\Int_{0}^{1}x^2\,dx}+\dfrac{6}{5}\,y^2\,\brak{\Int_{0}^{1}x\,dx}\;dy   \\
+      &= \Int_{0}^{1}\dfrac{6}{5}\brak{\dfrac{1}{3}}+\dfrac{6}{5}\,y^2\,\brak{\dfrac{1}{2}}\;dy \\
+      &= \dfrac{2}{5}\Int_{0}^{1}\,dy + \dfrac{3}{5}\Int_{0}^{1}y^2\,dy  \\
+      &= \dfrac{2}{5} + \dfrac{3}{5}\brak{\dfrac{1}{3}} \\
+\e{X} &=  \dfrac{3}{5}  
+\end{align*}
+Using equation \eqref{b} \e{Y} is calculated as
+\begin{align*}
+\e{Y} &= \Int_{0}^{1}\Int_{0}^{1} y\,\dfrac{6}{5}\brak{x+y^2}\,dx\,dy \;+ 0 \\ 
+      &= \Int_{0}^{1}\dfrac{6}{5}\,x\brak{\Int_{0}^{1}y\,dy} + \dfrac{6}{5}\brak{\Int_{0}^{1}y^{3}\,dy}\;dx \; \\ 
+      &= \Int_{0}^{1}\dfrac{6}{5}\,x\brak{\dfrac{1}{2}} + \dfrac{6}{5}\brak{\dfrac{1}{4}}\;dx \; \\ 
+      &= \dfrac{3}{5}\Int_{0}^{1}x\,dx\;+\;\dfrac{3}{10}\Int_{0}^{1}\,dx  \\
+      &= \dfrac{3}{5} \brak{\dfrac{1}{2}} + \dfrac{3}{10} \\
+\e{Y} &= \dfrac{3}{5}      
+\end{align*}
+ $$\therefore \e{X} = \dfrac{3}{5}\;\text{and}\;\e{Y} = \dfrac{3}{5}$$ 
+ Hence the answer is \textbf{option b}
+\end{document}

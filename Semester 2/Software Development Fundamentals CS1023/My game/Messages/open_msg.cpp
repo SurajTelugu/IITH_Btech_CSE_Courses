@@ -1,0 +1,1 @@
+#ifndef _OPEN_MSG

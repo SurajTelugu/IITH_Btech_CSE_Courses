@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1616859577 source:c:\users\admin\onedrive\desktop\learningc++\main.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<string>
+	<vector>
+

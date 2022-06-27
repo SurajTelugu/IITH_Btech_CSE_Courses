@@ -1,0 +1,6 @@
+Instructor_name,Instructor_course_id,Student_name,Student_course_id
+NULL,NULL,Jack,CS800
+NULL,NULL,Jason,CS450
+Aaron,CS700,NULL,NULL
+Amy,CS1000,Jones,CS1000
+Anne,CS400,NULL,NULL
